@@ -1,0 +1,550 @@
+{% extends "layouts/base.njk" %}
+{% from "partials/icons.njk" import check, chevronRight, phone, mail, send, mapPin %}
+
+{% block head %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "@id": "{{ site.url }}/#organization",
+        "name": "{{ site.name }}",
+        "image": "{{ site.url }}/logo.png",
+        "telephone": "{{ site.phone }}",
+        "email": "{{ site.email }}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ site.address.street }}",
+            "addressLocality": "{{ site.address.city }}",
+            "postalCode": "{{ site.address.zip }}",
+            "addressCountry": "CZ"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 48.9744,
+            "longitude": 14.4743
+        },
+        "url": "{{ site.url }}",
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "16:00"
+        }
+    }
+    </script>
+{% endblock %}
+
+{% block body %}
+    {% include "partials/nav.njk" %}
+
+    <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-b from-lime-300/30 to-lime-200/20 rounded-full blur-3xl -mr-20 -mt-60 -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-white/0 to-transparent z-10"></div>
+        <div class="absolute top-40 left-10 w-64 h-64 bg-fuchsia-400/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-20 w-80 h-80 bg-lime-300/20 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-20">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+
+                <!-- Text Content -->
+                <div class="lg:w-1/2 space-y-8 text-center lg:text-left">
+                    <div class="block w-fit mx-auto lg:mx-0 px-4 py-1.5 bg-white/80 backdrop-blur-sm border border-lime-300 text-lime-700 rounded-full text-sm font-bold tracking-wide mb-2 shadow-sm">
+                        SPOLEHLIVÉ ÚČETNICTVÍ
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight break-words">
+                        Účetnictví, které se vám <span class="text-transparent bg-clip-text bg-gradient-to-r from-lime-500 to-lime-600">přizpůsobí</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Moderní <strong>digitální přístup</strong> i tradiční <strong>osobní péče</strong>. Doklady si vyzvedneme u vás, nebo nám je pošlete online. <br>
+                        <span class="text-lime-700 font-medium">Soustřeďte se na podnikání, my pohlídáme čísla.</span>
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#cenik" class="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 group">
+                            Zobrazit ceník
+                            {{ chevronRight("w-[18px] h-[18px] group-hover:translate-x-1 transition-transform") }}
+                        </a>
+                        <a href="#kontakt-formular" class="px-8 py-4 bg-white/70 backdrop-blur-sm text-slate-800 border-2 border-white/80 rounded-2xl font-bold hover:border-lime-500 hover:bg-white hover:text-lime-600 transition-all flex items-center justify-center gap-2">
+                            {{ mail("w-[18px] h-[18px]") }}
+                            Napsat zprávu
+                        </a>
+                    </div>
+
+                    <!-- Quick Feature Pills -->
+                    <div class="flex flex-wrap gap-3 justify-center lg:justify-start pt-4">
+                        {% for pill in ["Daňová optimalizace", "Svoz dokladů", "Online přehled"] %}
+                        <span class="flex items-center gap-1 text-sm font-medium text-slate-700 bg-white/60 px-3 py-1 rounded-full border border-lime-200">
+                            {{ check("w-3.5 h-3.5 text-lime-600") }}
+                            {{ pill }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Visual Content Card -->
+                <div class="lg:w-1/2 relative w-full flex justify-center lg:justify-end mt-8 lg:mt-0">
+                    <div class="relative bg-white/80 backdrop-blur-xl p-8 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(219,39,119,0.15)] border border-pink-100 max-w-md w-full transform hover:scale-[1.02] transition-transform duration-500">
+
+                        <!-- Header -->
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-1">Vaše firma v bezpečí</h3>
+                            <p class="text-slate-500 text-sm">Postaráme se o kompletní agendu</p>
+                        </div>
+
+                        <!-- Features List -->
+                        <div class="space-y-4">
+                            <div class="p-4 bg-lime-50 rounded-2xl flex items-center gap-4 shadow-sm border border-lime-100 hover:border-lime-300 transition-colors">
+                                <div class="bg-lime-200 p-2 rounded-xl text-lime-700">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700">Zastupování před úřady</p>
+                                    <p class="text-xs text-slate-600">Jednáme za vás</p>
+                                </div>
+                                {{ check("ml-auto text-lime-500 w-5 h-5") }}
+                            </div>
+                            <div class="p-4 bg-white rounded-2xl flex items-center gap-4 shadow-sm border border-slate-50 hover:border-lime-200 transition-colors">
+                                <div class="bg-fuchsia-100 p-2 rounded-xl text-fuchsia-600">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700">Svoz dokladů</p>
+                                    <p class="text-xs text-slate-500">České Budějovice a okolí</p>
+                                </div>
+                                {{ check("ml-auto text-lime-500 w-5 h-5") }}
+                            </div>
+                            <div class="p-4 bg-white rounded-2xl flex items-center gap-4 shadow-sm border border-slate-50 hover:border-lime-200 transition-colors">
+                                <div class="bg-slate-100 p-2 rounded-xl text-slate-600">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-slate-700">Daňová jistota</p>
+                                    <p class="text-xs text-slate-500">Odpovědnost a pojištění</p>
+                                </div>
+                                {{ check("ml-auto text-lime-500 w-5 h-5") }}
+                            </div>
+                        </div>
+
+                        <!-- Bottom decorative -->
+                        <div class="mt-8 pt-6 border-t border-slate-100 text-center">
+                            <div class="h-1.5 w-24 bg-gradient-to-r from-fuchsia-300 via-lime-400 to-fuchsia-300 rounded-full mx-auto"></div>
+                        </div>
+                    </div>
+
+                    <!-- Decorative element behind -->
+                    <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-fuchsia-200/30 to-lime-200/30 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Divider -->
+        <div class="absolute bottom-0 w-full leading-none z-10 text-white/20">
+            <svg class="block w-full h-16 md:h-32" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="currentColor" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- SERVICES SECTION -->
+    <section id="sluzby" class="py-20 relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Služby na míru</h2>
+                <p class="text-slate-600">
+                    Postaráme se o vše. Od krabice s účtenkami až po daňové přiznání.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1 - Tax Returns -->
+                <div class="group p-8 rounded-[2rem] bg-lime-300 border border-lime-400 shadow-lg shadow-lime-200/50 hover:bg-lime-400 hover:shadow-xl hover:shadow-lime-300/50 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-lime-600 mb-6 group-hover:bg-slate-900 group-hover:text-lime-400 transition-colors">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Daňová přiznání</h3>
+                    <p class="text-slate-800 mb-6 leading-relaxed font-medium">
+                        Zpracujeme za vás veškerá přiznání. Daň z příjmu fyzických i právnických osob, silniční daň a další povinnosti.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-800">
+                        <li class="flex items-center gap-2">{{ check("w-3.5 h-3.5 text-slate-900") }} Daň z příjmu (DPFO/DPPO)</li>
+                        <li class="flex items-center gap-2">{{ check("w-3.5 h-3.5 text-slate-900") }} Přiznání k DPH</li>
+                        <li class="flex items-center gap-2">{{ check("w-3.5 h-3.5 text-slate-900") }} Kontrolní a souhrnné hlášení</li>
+                        <li class="flex items-center gap-2">{{ check("w-3.5 h-3.5 text-slate-900") }} Silniční daň</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 - Tax Optimization (Dark) -->
+                <div class="group p-8 rounded-[2rem] bg-slate-900 text-white shadow-2xl shadow-slate-900/20 transform relative overflow-hidden border border-slate-800 hover:-translate-y-1 transition-transform">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-lime-500/20 rounded-full -mr-10 -mt-10 blur-3xl"></div>
+
+                    <div class="w-14 h-14 bg-slate-800 rounded-2xl flex items-center justify-center text-lime-400 mb-6 group-hover:bg-lime-500 group-hover:text-slate-900 transition-colors">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Daňová optimalizace</h3>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        Nejsme jen "přepisovači dat". Aktivně hledáme cesty, jak v souladu se zákonem optimalizovat vaši daňovou povinnost.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex items-center gap-2">{{ check("w-3.5 h-3.5 text-lime-400") }} Daň z příjmu a DPH</li>
+                        <li class="flex items-center gap-2">{{ check("w-3.5 h-3.5 text-lime-400") }} Kontrola nákladů</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 - Digital & Hybrid -->
+                <div class="group p-8 rounded-[2rem] bg-lime-200 border border-lime-300 shadow-lg shadow-lime-100/50 hover:bg-lime-300 hover:shadow-xl hover:shadow-lime-200/50 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-lime-600 mb-6 group-hover:bg-slate-900 group-hover:text-lime-400 transition-colors">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 12.586a2 2 0 1 1 2.828-2.828"/><path d="M3 2v6"/><path d="m3 8 4-4 4 4"/><path d="M11 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h3"/><path d="M11 22h3"/><path d="M11 18h3"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Digitálně i osobně</h3>
+                    <p class="text-slate-800 mb-6 leading-relaxed font-medium">
+                        Šetřete čas a posílejte doklady online. Pokud preferujete papír, v Českých Budějovicích a okolí si pro doklady <strong>osobně přijedeme</strong>.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-800">
+                        <li class="flex items-center gap-2">{{ check("w-3.5 h-3.5 text-slate-900") }} Online přístup k datům</li>
+                        <li class="flex items-center gap-2">{{ check("w-3.5 h-3.5 text-slate-900") }} Svoz dokladů zdarma</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 - Wages -->
+                <div class="group p-8 rounded-[2rem] bg-lime-300 border border-lime-400 shadow-lg shadow-lime-200/50 hover:bg-lime-400 hover:shadow-xl hover:shadow-lime-300/50 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-lime-600 mb-6 group-hover:bg-slate-900 group-hover:text-lime-400 transition-colors">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Mzdy a personalistika</h3>
+                    <p class="text-slate-800 mb-6 leading-relaxed font-medium">
+                        Kompletní mzdová agenda. Přihlášky, odhlášky, roční zúčtování a komunikace s pojišťovnami. Bez starostí.
+                    </p>
+                    <ul class="space-y-2 text-sm text-slate-800">
+                        <li class="flex items-center gap-2">{{ check("w-3.5 h-3.5 text-slate-900") }} Diskrétní zpracování</li>
+                        <li class="flex items-center gap-2">{{ check("w-3.5 h-3.5 text-slate-900") }} ELDP a přehledy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="cenik" class="py-20 relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Orientační ceník</h2>
+                <p class="text-slate-600 max-w-xl mx-auto">
+                    Každý klient je pro nás jedinečný. Finální cena závisí na množství dokladů a složitosti agendy.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {% for card in pricing %}
+                <div class="bg-slate-900 p-6 rounded-2xl {{ 'border-2 border-lime-500/30' if card.recommended else 'border border-slate-800' }} shadow-xl {{ 'hover:border-lime-500' if not card.recommended }} transition-all duration-300 group hover:-translate-y-1 relative">
+                    {% if card.recommended %}
+                    <div class="absolute top-0 right-0 bg-lime-500 text-slate-900 text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg">DOPORUČUJEME</div>
+                    {% endif %}
+                    <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-lime-400 mb-4 group-hover:bg-lime-500 group-hover:text-slate-900 transition-colors">
+                        {{ card.icon | safe }}
+                    </div>
+                    <h3 class="font-bold text-lg mb-1 text-white">{{ card.title }}</h3>
+                    <p class="text-sm text-slate-400 mb-4">{{ card.subtitle }}</p>
+                    {% if card.priceHighlight %}
+                    <div class="text-xl font-bold text-lime-400 mb-2">{{ card.price }}</div>
+                    {% else %}
+                    <div class="text-2xl font-bold text-white mb-2">{{ card.price }}<span class="text-sm font-normal text-slate-500">{{ card.priceSuffix }}</span></div>
+                    {% endif %}
+                    <ul class="text-sm text-slate-300 space-y-2 border-t pt-4 border-slate-700">
+                        {% for item in card.features %}
+                        <li class="flex gap-2">{{ check("w-3.5 h-3.5 text-lime-500 shrink-0 mt-0.5") }} {{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-slate-500 text-sm mb-4">Ceny jsou orientační. Pro přesnou kalkulaci nás kontaktujte.</p>
+                <a href="#kontakt-formular" class="inline-flex items-center gap-2 text-lime-600 font-bold hover:underline">
+                    Mám zájem o kalkulaci
+                    {{ chevronRight("w-4 h-4") }}
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="o-nas" class="py-20 relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12 bg-lime-300/90 backdrop-blur-sm rounded-[2.5rem] p-8 md:p-12 shadow-xl shadow-lime-200/50 border border-lime-400">
+                <div class="md:w-2/3">
+                    <h4 class="text-lime-800 font-bold uppercase tracking-wider text-sm mb-2">O nás</h4>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Monika Novotná & CB Účto</h2>
+                    <p class="text-slate-800 leading-relaxed mb-6 font-medium">
+                        Jsme tým, který rozumí číslům i lidem. Sídlíme v Českých Budějovicích, ale díky technologiím obsluhujeme klienty efektivně i na dálku.
+                        Víme, že každá firma je jiná – někdo potřebuje vše vyřešit přes email, jiný ocení, když se stavíme pro šanony osobně.
+                        My umíme obojí.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="px-4 py-2 bg-white/60 rounded-lg text-slate-800 font-bold text-sm shadow-sm">Osobní přístup</div>
+                        <div class="px-4 py-2 bg-white/60 rounded-lg text-slate-800 font-bold text-sm shadow-sm">Znalost legislativy</div>
+                        <div class="px-4 py-2 bg-white/60 rounded-lg text-slate-800 font-bold text-sm shadow-sm">Spolehlivost</div>
+                    </div>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="w-full h-64 bg-white/40 rounded-2xl flex flex-col items-center justify-center text-slate-600 border-2 border-dashed border-lime-500/50">
+                        <div class="w-24 h-24 bg-white shadow-sm rounded-full mb-4 flex items-center justify-center" aria-hidden="true">
+                            <span class="text-2xl font-bold text-lime-600">MN</span>
+                        </div>
+                        <p class="font-bold text-center px-4 text-slate-900">Monika Novotná<br><span class="text-sm font-normal text-slate-700">Jednatelka</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section id="blog" class="py-20 relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Z našeho blogu</h2>
+                <p class="text-slate-600 max-w-xl mx-auto">
+                    Praktické tipy, novinky z účetnictví a užitečné informace pro vaše podnikání.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {% for post in blogPosts %}
+                <a href="{{ post.url }}" class="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-white/50 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-lime-500 focus:ring-offset-2 transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br {{ post.gradient }} flex items-center justify-center">
+                        {{ post.icon | safe }}
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 {{ post.badgeClass }} rounded text-xs font-medium">{{ post.category }}</span>
+                            <span class="text-slate-400 text-xs">{{ post.date }}</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 mb-2 group-hover:text-lime-600 transition-colors">{{ post.title }}</h3>
+                        <p class="text-slate-600 text-sm line-clamp-2">{{ post.excerpt }}</p>
+                        <div class="mt-4 flex items-center text-lime-600 font-medium text-sm group-hover:gap-2 transition-all">
+                            Číst více
+                            {{ chevronRight("w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform") }}
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="kontakt" class="py-20 relative overflow-hidden bg-slate-900 text-white">
+        <!-- Background glow -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-lime-500/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl -ml-20 -mb-20"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Kontaktujte nás</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">
+                    Máte dotaz nebo zájem o spolupráci? Napište nám přes formulář níže nebo rovnou zavolejte.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center text-lime-400 shrink-0 border border-slate-700">
+                            {{ mapPin("w-6 h-6") }}
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Adresa sídla</h3>
+                            <p class="text-slate-300">{{ site.address.street }}<br>{{ site.address.zip }} {{ site.address.city }}</p>
+                            <a href="{{ site.mapUrl }}" target="_blank" rel="noopener noreferrer" class="text-lime-400 text-sm hover:underline mt-2 inline-block">Zobrazit na mapě &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center text-lime-400 shrink-0 border border-slate-700">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Telefon</h3>
+                            <p class="text-slate-300">Monika Novotná</p>
+                            <a href="tel:{{ site.phone }}" class="text-2xl font-bold text-white hover:text-lime-400 transition-colors">{{ site.phoneFormatted }}</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center text-lime-400 shrink-0 border border-slate-700">
+                            {{ mail("w-6 h-6") }}
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Email</h3>
+                            <a href="mailto:{{ site.email }}" class="text-lg text-slate-300 hover:text-white transition-colors">{{ site.email }}</a>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 border-t border-slate-800">
+                        <div class="bg-slate-800/50 p-4 rounded-xl inline-block border border-slate-700">
+                            <span class="text-slate-400 text-sm block">Identifikační číslo (IČO)</span>
+                            <span class="text-xl font-mono text-white">{{ site.ico }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div id="kontakt-formular" class="bg-white rounded-3xl p-8 shadow-2xl relative overflow-hidden scroll-mt-24 text-slate-800">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Napište nám</h3>
+                        <p class="text-slate-500 text-sm">Odpovíme vám co nejdříve.</p>
+                    </div>
+
+                    <!-- Success message (hidden by default) -->
+                    <div id="form-success" class="hidden bg-green-50 text-green-700 p-6 rounded-2xl flex-col items-center justify-center text-center h-64 animate-fade-zoom">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                            {{ check("w-8 h-8 text-green-600") }}
+                        </div>
+                        <h4 class="text-xl font-bold mb-2">Zpráva odeslána!</h4>
+                        <p>Děkujeme za vaši zprávu. Brzy se vám ozveme.</p>
+                        <button id="send-another" class="mt-6 text-sm text-green-600 font-bold hover:underline">Poslat další zprávu</button>
+                    </div>
+
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Vaše jméno</label>
+                            <input type="text" id="name" name="name" required aria-required="true" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 focus:border-lime-500 outline-none transition-all text-slate-900" placeholder="Jan Novák">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required aria-required="true" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 focus:border-lime-500 outline-none transition-all text-slate-900" placeholder="vas@email.cz">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Telefon</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 focus:border-lime-500 outline-none transition-all text-slate-900" placeholder="+420 777 888 999">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Zpráva</label>
+                            <textarea id="message" name="message" rows="4" required aria-required="true" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-lime-500 focus:border-lime-500 outline-none transition-all text-slate-900" placeholder="Mám zájem o vedení účetnictví..."></textarea>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-lime-600 transition-colors shadow-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
+                            <span id="btn-text">Odeslat zprávu</span>
+                            {{ send("w-[18px] h-[18px]") }}
+                        </button>
+                        <p class="text-xs text-center text-slate-400 mt-4">Kliknutím souhlasíte se zpracováním osobních údajů pro účely odpovědi.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    {% include "partials/footer.njk" %}
+
+    <script>
+        // Logo fallback
+        const logoImg = document.getElementById('logo-img');
+        const logoFallback = document.getElementById('logo-fallback');
+        logoImg.onerror = function() {
+            logoImg.classList.add('hidden');
+            logoFallback.classList.remove('hidden');
+            logoFallback.classList.add('flex');
+        };
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuToggle.querySelector('svg:first-child');
+        const closeIcon = menuToggle.querySelector('svg:last-child');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Otevřít menu');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Zavřít menu');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'py-2');
+                navbar.classList.remove('bg-transparent', 'py-4');
+            } else {
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'py-2');
+                navbar.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnIcon = submitBtn.querySelector('svg');
+        const sendAnother = document.getElementById('send-another');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            btnText.textContent = 'Odesílám...';
+            btnIcon.classList.add('hidden');
+
+            setTimeout(() => {
+                contactForm.classList.add('hidden');
+                formSuccess.classList.remove('hidden');
+                formSuccess.classList.add('flex');
+                submitBtn.disabled = false;
+                btnText.textContent = 'Odeslat zprávu';
+                btnIcon.classList.remove('hidden');
+            }, 1500);
+        });
+
+        sendAnother.addEventListener('click', () => {
+            formSuccess.classList.add('hidden');
+            formSuccess.classList.remove('flex');
+            contactForm.classList.remove('hidden');
+            contactForm.reset();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock %}

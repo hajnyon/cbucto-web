@@ -1,0 +1,135 @@
+{% extends "layouts/blog.njk" %}
+{% from "partials/icons.njk" import chevronRight %}
+
+{% block featuredImage %}
+<div class="mb-12 rounded-3xl overflow-hidden bg-gradient-to-br from-slate-700 to-slate-900 h-64 md:h-80 flex items-center justify-center">
+    <svg class="w-24 h-24 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+</div>
+{% endblock %}
+
+{% block articleContent %}
+<p class="text-lg text-slate-700 leading-relaxed">
+    Doba, kdy účetní pracovaly s hromadami papírů a kalkulačkou, je nenávratně pryč. Moderní účetnictví je digitální, efektivní a šetří čas i peníze. A co je nejlepší – přechod na digitální účetnictví je jednodušší, než si myslíte.
+</p>
+
+<section>
+    <h2 class="text-2xl font-bold text-slate-900 mb-6">Výhody digitálního účetnictví</h2>
+
+    <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-5 bg-lime-50 rounded-2xl border border-lime-100">
+            <div class="w-10 h-10 bg-lime-200 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-lime-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Úspora času</h3>
+            <p class="text-sm text-slate-600">Automatické zpracování faktur, rychlé vyhledávání dokladů a okamžitý přístup k datům odkudkoliv.</p>
+        </div>
+
+        <div class="p-5 bg-fuchsia-50 rounded-2xl border border-fuchsia-100">
+            <div class="w-10 h-10 bg-fuchsia-200 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-fuchsia-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Bezpečnost dat</h3>
+            <p class="text-sm text-slate-600">Cloudové zálohy chrání vaše data před ztrátou. Žádný požár nebo povodeň vám nezničí účetnictví.</p>
+        </div>
+
+        <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+            <div class="w-10 h-10 bg-slate-200 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Méně prostoru</h3>
+            <p class="text-sm text-slate-600">Zbavte se archivů plných šanonů. Vše máte v počítači nebo cloudu na několika kliknutí.</p>
+        </div>
+
+        <div class="p-5 bg-lime-50 rounded-2xl border border-lime-100">
+            <div class="w-10 h-10 bg-lime-200 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-lime-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Nižší náklady</h3>
+            <p class="text-sm text-slate-600">Méně papíru, toneru a fyzického archivování znamená nižší provozní náklady.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">Jak posílat doklady digitálně</h2>
+    <p class="text-slate-700 mb-6">
+        Spolupráce s námi je maximálně jednoduchá. Doklady nám můžete předávat několika způsoby:
+    </p>
+
+    <div class="space-y-4">
+        <div class="flex items-start gap-4 p-4 bg-slate-900 rounded-xl text-white">
+            <div class="w-12 h-12 bg-lime-500 rounded-xl flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div>
+                <h3 class="font-bold text-white">E-mail</h3>
+                <p class="text-slate-300 text-sm">Jednoduše nám pošlete faktury a doklady na e-mail. Přijímáme PDF, obrázky i naskenované dokumenty.</p>
+            </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-4 bg-lime-50 rounded-xl border border-lime-100">
+            <div class="w-12 h-12 bg-lime-200 rounded-xl flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-lime-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+            </div>
+            <div>
+                <h3 class="font-bold text-slate-900">Cloudové úložiště</h3>
+                <p class="text-slate-600 text-sm">Sdílejte s námi složku na Google Drive, Dropbox nebo OneDrive. Doklady nahrajete a my je zpracujeme.</p>
+            </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-4 bg-fuchsia-50 rounded-xl border border-fuchsia-100">
+            <div class="w-12 h-12 bg-fuchsia-200 rounded-xl flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-fuchsia-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <div>
+                <h3 class="font-bold text-slate-900">Mobilní aplikace</h3>
+                <p class="text-slate-600 text-sm">Vyfotíte účtenku telefonem a ihned ji odešlete. Ideální pro podnikatele na cestách.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">Stále preferujete papír? Nevadí!</h2>
+    <p class="text-slate-700 mb-4">
+        Chápeme, že ne každý chce nebo může přejít na digitální evidenci. Proto nabízíme <strong>svoz dokladů</strong> v Českých Budějovicích a okolí. Přijedeme k vám, vyzvedneme šanony s doklady a vše zpracujeme za vás.
+    </p>
+
+    <div class="p-5 bg-lime-100 rounded-xl border border-lime-200 flex items-center gap-4">
+        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-lime-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+        </div>
+        <div>
+            <p class="font-bold text-slate-900">Svoz dokladů zdarma</p>
+            <p class="text-sm text-slate-700">Pro klienty v Českých Budějovicích a okolí zajišťujeme svoz dokladů bez příplatku.</p>
+        </div>
+    </div>
+</section>
+
+<section class="p-6 bg-slate-100 rounded-2xl">
+    <h2 class="text-xl font-bold text-slate-900 mb-4">3 kroky k digitálnímu účetnictví</h2>
+    <div class="space-y-4">
+        <div class="flex items-center gap-4">
+            <div class="w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+            <p class="text-slate-700"><strong>Kontaktujte nás</strong> – domluvíme se na způsobu spolupráce</p>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+            <p class="text-slate-700"><strong>Nastavíme systém</strong> – vybereme vhodný způsob předávání dokladů</p>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="w-8 h-8 bg-lime-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+            <p class="text-slate-700"><strong>Zpracujeme vše za vás</strong> – vy se soustředíte na podnikání</p>
+        </div>
+    </div>
+</section>
+
+<div class="mt-12 p-6 bg-lime-100 rounded-2xl border border-lime-200">
+    <h3 class="text-lg font-bold text-slate-900 mb-2">Přejděte na digitální účetnictví</h3>
+    <p class="text-slate-700 mb-4">Rádi vám pomůžeme s přechodem na moderní způsob vedení účetnictví. Kontaktujte nás a zjistěte, jak můžeme spolupracovat.</p>
+    <a href="{{ basePath }}/index.html#kontakt-formular" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-colors">
+        Domluvit schůzku
+        {{ chevronRight("w-4 h-4") }}
+    </a>
+</div>
+{% endblock %}

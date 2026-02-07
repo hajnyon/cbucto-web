@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <link rel="canonical" href="{{ site.url }}{{ canonicalPath }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:url" content="{{ site.url }}{{ canonicalPath }}">
+    <meta property="og:type" content="{{ 'article' if not isHome else 'website' }}">
+    <meta property="og:image" content="{{ site.url }}/logo.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="{{ basePath }}/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="{{ basePath }}/css/main.css">
+    {% block head %}{% endblock %}
+</head>
+<body class="{{ bodyClass }}">
+    {% block body %}{% endblock %}
+</body>
+</html>
