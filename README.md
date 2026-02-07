@@ -14,7 +14,7 @@ npm install
 
 ## Development
 
-Build the site into `./build`:
+Build the site into `./docs`:
 
 ```bash
 npm run build
@@ -51,11 +51,11 @@ src/
 
 The build script (`build.js`) does the following:
 
-1. Cleans `./build`
-2. Copies static assets from `src/assets/` to `build/`
+1. Cleans `./docs`
+2. Copies static assets from `src/assets/` to `docs/`
 3. Copies Inter font files (latin + latin-ext) from `@fontsource-variable/inter` to `build/fonts/`
 4. Compiles CSS via PostCSS (Tailwind + Autoprefixer) to `build/css/main.css`
-5. Renders Nunjucks templates from `src/pages/` to `build/`
+5. Renders Nunjucks templates from `src/pages/` to `docs/`
 
 Page metadata (titles, descriptions, blog post data, pricing) is defined in `build.js`.
 

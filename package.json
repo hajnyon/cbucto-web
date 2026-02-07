@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "node build.js",
-    "clean": "rm -rf build"
+    "clean": "rm -rf docs"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",

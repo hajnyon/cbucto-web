@@ -2,7 +2,7 @@
 
 ## Project overview
 
-Static website for CB Účto s.r.o. (accounting firm). Built with Nunjucks templates, Tailwind CSS, and a custom Node.js build script. Output goes to `./build`.
+Static website for CB Účto s.r.o. (accounting firm). Built with Nunjucks templates, Tailwind CSS, and a custom Node.js build script. Output goes to `./docs`.
 
 ## Tech stack
 
@@ -13,7 +13,7 @@ Static website for CB Účto s.r.o. (accounting firm). Built with Nunjucks templ
 
 ## Key conventions
 
-- Templates live in `src/`, build output in `build/`. Never edit files in `build/` directly.
+- Templates live in `src/`, build output in `docs/`. Never edit files in `docs/` directly.
 - Layouts (`src/layouts/`) provide the HTML skeleton. Pages extend them.
 - Partials (`src/partials/`) are included for nav, footer, and icon macros.
 - Icon macros in `src/partials/icons.njk` reduce SVG duplication. Import with `{% from "partials/icons.njk" import check, chevronRight %}`.
@@ -26,7 +26,7 @@ Static website for CB Účto s.r.o. (accounting firm). Built with Nunjucks templ
 ## Commands
 
 - `npm run build` — build the site
-- `npm run clean` — remove `build/`
+- `npm run clean` — remove `docs/`
 
 ## Adding pages
 

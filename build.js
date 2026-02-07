@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
-const BUILD = path.join(ROOT, 'build');
+const BUILD = path.join(ROOT, 'docs');
 
 // Site-wide data
 const site = {
