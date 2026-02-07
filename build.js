@@ -167,7 +167,15 @@ async function build() {
         }
     }
 
-    // 3. Copy Inter font files from @fontsource-variable/inter (only latin + latin-ext)
+    // 3. Copy favicon files to build root
+    console.log('  Copying favicons...');
+    const faviconDir = path.join(SRC, 'assets', 'favicon');
+    const faviconFiles = await fs.readdir(faviconDir);
+    for (const file of faviconFiles) {
+        await fs.copy(path.join(faviconDir, file), path.join(BUILD, file));
+    }
+
+    // 4. Copy Inter font files from @fontsource-variable/inter (only latin + latin-ext)
     console.log('  Copying fonts...');
     const fontsourceDir = path.join(ROOT, 'node_modules', '@fontsource-variable', 'inter', 'files');
     const neededFonts = [
@@ -178,7 +186,7 @@ async function build() {
         await fs.copy(path.join(fontsourceDir, file), path.join(BUILD, 'fonts', file));
     }
 
-    // 4. Process CSS with Tailwind + Autoprefixer
+    // 5. Process CSS with Tailwind + Autoprefixer
     console.log('  Processing CSS...');
     const cssInput = await fs.readFile(path.join(SRC, 'css', 'main.css'), 'utf8');
     const cssResult = await postcss([
@@ -190,7 +198,7 @@ async function build() {
     });
     await fs.writeFile(path.join(BUILD, 'css', 'main.css'), cssResult.css);
 
-    // 5. Render Nunjucks templates
+    // 6. Render Nunjucks templates
     console.log('  Rendering pages...');
     const env = new nunjucks.Environment(
         new nunjucks.FileSystemLoader(SRC, { noCache: true }),
@@ -208,7 +216,7 @@ async function build() {
         console.log(`    ${page.output}`);
     }
 
-    // 6. Generate sitemap.xml
+    // 7. Generate sitemap.xml
     console.log('  Generating sitemap...');
     const sitemapUrls = pages.map(page => {
         const loc = `${site.url}/${page.output}`;
