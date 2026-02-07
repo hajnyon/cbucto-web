@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS-only mobile menu toggle */
+nav:has(#menu-toggle:checked) #mobile-menu {
+    display: flex;
+}
+
 /* Inter font - latin-ext (Czech characters: č, ř, ž, ě, š, etc.) */
 @font-face {
     font-family: 'Inter';

@@ -12,7 +12,7 @@
 
         <!-- LOGO -->
         <a href="{{ logoHref }}" class="flex items-center gap-2 transform hover:scale-105 transition-transform duration-300 origin-left">
-            <img src="{{ basePath }}/logo.png" alt="{{ site.name }}" class="{{ 'h-16 md:h-20' if isHome else 'h-12 md:h-16' }} w-auto object-contain" id="logo-img">
+            <img src="{{ basePath }}/logo.png" alt="{{ site.name }}" class="{{ 'h-16 md:h-20' if isHome else 'h-12 md:h-16' }} w-auto object-contain" id="logo-img" onerror="this.classList.add('hidden');document.getElementById('logo-fallback')?.classList.remove('hidden');document.getElementById('logo-fallback')?.classList.add('flex')">
             {% if isHome %}
             <!-- Fallback logo (hidden by default) -->
             <div id="logo-fallback" class="hidden flex-col leading-none select-none" role="img" aria-label="{{ site.name }}">
@@ -43,11 +43,12 @@
             <a href="#kontakt-formular" class="hidden sm:block px-5 py-2.5 bg-lime-500 text-white rounded-full hover:bg-lime-600 transition-all shadow-lg hover:shadow-lime-500/40 font-bold text-sm uppercase tracking-wide">
                 Napsat nám
             </a>
-            <!-- Mobile Menu Button -->
-            <button id="menu-toggle" class="md:hidden text-slate-800 p-2" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-menu">
-                {{ hamburger("w-7 h-7") }}
-                {{ close("w-7 h-7 hidden") }}
-            </button>
+            <!-- Mobile Menu Toggle (CSS-only) -->
+            <label for="menu-toggle" class="md:hidden text-slate-800 p-2 cursor-pointer" aria-label="Otevřít menu">
+                <input type="checkbox" id="menu-toggle" class="hidden peer" aria-controls="mobile-menu">
+                {{ hamburger("w-7 h-7 peer-checked:hidden") }}
+                {{ close("w-7 h-7 hidden peer-checked:block") }}
+            </label>
             {% endif %}
         </div>
     </div>
