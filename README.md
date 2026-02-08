@@ -65,3 +65,8 @@ Page metadata (titles, descriptions, blog post data, pricing) is defined in `bui
 2. Add a page entry in the `pages` array in `build.js` with metadata
 3. Add a blog card entry in the `blogPosts` array in `build.js`
 4. Run `npm run build`
+
+## Services
+
+- [Tally](https://tally.so) - contact form
+- [Simple Analytics](https://simpleanalytics.com) - privacy-friendly website analytics
