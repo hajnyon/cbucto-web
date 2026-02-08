@@ -226,6 +226,9 @@ async function build() {
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.join('\n')}\n</urlset>\n`;
     await fs.writeFile(path.join(BUILD, 'sitemap.xml'), sitemap);
 
+    // 8. Write CNAME for GitHub Pages
+    await fs.writeFile(path.join(BUILD, 'CNAME'), 'www.cbucto.cz');
+
     console.log('Build complete!');
 }
 
