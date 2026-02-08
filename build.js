@@ -143,6 +143,18 @@ const pages = [
             articleSubtitle: 'Papírové šanony plné faktur jsou minulostí. Zjistěte, jaké výhody přináší digitální účetnictví a jak snadno můžete přejít na elektronickou evidenci dokladů.',
         },
     },
+    {
+        template: 'pages/ochrana-osobnich-udaju.njk',
+        output: 'ochrana-osobnich-udaju.html',
+        data: {
+            title: 'Ochrana osobních údajů | CB Účto s.r.o.',
+            description: 'Informace o zpracování osobních údajů dle GDPR. Zjistěte, jaké údaje zpracováváme, proč a jaká máte práva.',
+            bodyClass: 'font-sans text-slate-800 bg-gradient-to-b from-fuchsia-100 via-pink-50 to-fuchsia-50 min-h-screen',
+            isHome: false,
+            basePath: '.',
+            canonicalPath: '/ochrana-osobnich-udaju.html',
+        },
+    },
 ];
 
 async function build() {

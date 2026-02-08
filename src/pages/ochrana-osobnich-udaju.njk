@@ -1,0 +1,177 @@
+{% extends "layouts/base.njk" %}
+{% from "partials/icons.njk" import chevronLeft %}
+
+{% block body %}
+{% include "partials/nav.njk" %}
+
+<main id="main-content">
+    <section class="pt-32 pb-20">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+
+            <!-- Breadcrumb -->
+            <nav aria-label="Breadcrumb" class="mb-8 text-sm">
+                <ol class="flex items-center flex-wrap">
+                    <li><a href="{{ basePath }}/index.html" class="text-slate-500 hover:text-lime-600">Domů</a></li>
+                    <li aria-hidden="true" class="mx-2 text-slate-400">/</li>
+                    <li aria-current="page" class="text-slate-700">Ochrana osobních údajů</li>
+                </ol>
+            </nav>
+
+            <header class="mb-12">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+                    Ochrana osobních údajů
+                </h1>
+                <p class="text-xl text-slate-600 leading-relaxed">
+                    Informace o zpracování osobních údajů dle nařízení GDPR (EU) 2016/679
+                </p>
+            </header>
+
+            <div class="prose prose-lg max-w-none">
+                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-lg border border-white/50 space-y-10">
+
+                    <!-- 1. Správce -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-4">1. Správce osobních údajů</h2>
+                        <p class="text-slate-700 leading-relaxed mb-2">
+                            Správcem osobních údajů je:
+                        </p>
+                        <ul class="list-none space-y-1 text-slate-700">
+                            <li><strong>{{ site.name }}</strong></li>
+                            <li>{{ site.address.street }}, {{ site.address.zip }} {{ site.address.city }}</li>
+                            <li>IČO: {{ site.ico }}</li>
+                            <li>E-mail: <a href="mailto:{{ site.email }}" class="text-lime-600 hover:underline">{{ site.email }}</a></li>
+                            <li>Telefon: <a href="tel:{{ site.phone }}" class="text-lime-600 hover:underline">{{ site.phoneFormatted }}</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- 2. Jaké údaje zpracováváme -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">2. Jaké osobní údaje zpracováváme</h2>
+                        <p class="text-slate-700 leading-relaxed mb-4">
+                            Prostřednictvím kontaktního formuláře na našich webových stránkách můžeme shromažďovat následující osobní údaje:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-700">
+                            <li>Jméno a příjmení</li>
+                            <li>E-mailová adresa</li>
+                            <li>Telefonní číslo (pokud jej uvedete)</li>
+                            <li>Obsah vaší zprávy</li>
+                        </ul>
+                    </section>
+
+                    <!-- 3. Účel zpracování -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">3. Účel zpracování</h2>
+                        <p class="text-slate-700 leading-relaxed mb-4">
+                            Vaše osobní údaje zpracováváme za těmito účely:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-700">
+                            <li><strong>Odpověď na váš dotaz</strong> – zpracování a zodpovězení zpráv zaslaných prostřednictvím kontaktního formuláře</li>
+                            <li><strong>Příprava nabídky služeb</strong> – vytvoření cenové nabídky na základě vašeho požadavku</li>
+                            <li><strong>Komunikace</strong> – následná komunikace související s vaším dotazem</li>
+                        </ul>
+                    </section>
+
+                    <!-- 4. Právní základ -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">4. Právní základ zpracování</h2>
+                        <p class="text-slate-700 leading-relaxed">
+                            Právním základem pro zpracování vašich osobních údajů je:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-700 mt-4">
+                            <li><strong>Oprávněný zájem</strong> (čl. 6 odst. 1 písm. f) GDPR) – reakce na vaše poptávky a dotazy</li>
+                            <li><strong>Plnění smlouvy nebo provedení opatření před uzavřením smlouvy</strong> (čl. 6 odst. 1 písm. b) GDPR) – pokud vaše zpráva směřuje k uzavření smlouvy o poskytování našich služeb</li>
+                        </ul>
+                    </section>
+
+                    <!-- 5. Doba uchování -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">5. Doba uchování údajů</h2>
+                        <p class="text-slate-700 leading-relaxed">
+                            Osobní údaje z kontaktního formuláře uchováváme po dobu nezbytnou k vyřízení vašeho dotazu, nejdéle však po dobu <strong>3 let</strong> od posledního kontaktu, pokud není vyžadována delší doba z důvodu plnění zákonných povinností.
+                        </p>
+                    </section>
+
+                    <!-- 6. Příjemci údajů -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">6. Příjemci a zpracovatelé údajů</h2>
+                        <p class="text-slate-700 leading-relaxed mb-4">
+                            Vaše osobní údaje mohou být předány následujícím třetím stranám:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-700">
+                            <li><strong>Tally NV</strong> – provozovatel služby Tally.so, která zajišťuje funkčnost kontaktního formuláře. Tally zpracovává data v souladu s GDPR a má sídlo v Belgii (EU). Více informací: <a href="https://tally.so/help/gdpr" class="text-lime-600 hover:underline" target="_blank" rel="noopener noreferrer">tally.so/help/gdpr</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- 7. Analytika -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">7. Analytika webu</h2>
+                        <p class="text-slate-700 leading-relaxed">
+                            Pro měření návštěvnosti používáme službu <strong>Simple Analytics</strong>, která je navržena s ohledem na ochranu soukromí. Simple Analytics nepoužívá cookies, nesbírá osobní údaje a nesleduje jednotlivé návštěvníky. Více informací: <a href="https://simpleanalytics.com/privacy" class="text-lime-600 hover:underline" target="_blank" rel="noopener noreferrer">simpleanalytics.com/privacy</a>
+                        </p>
+                    </section>
+
+                    <!-- 8. Cookies -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">8. Soubory cookies</h2>
+                        <p class="text-slate-700 leading-relaxed">
+                            Naše webové stránky nepoužívají žádné sledovací ani marketingové cookies. Mohou být použity pouze technicky nezbytné cookies pro správné fungování webových stránek (např. při vyplňování kontaktního formuláře).
+                        </p>
+                    </section>
+
+                    <!-- 9. Práva -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">9. Vaše práva</h2>
+                        <p class="text-slate-700 leading-relaxed mb-4">
+                            V souvislosti se zpracováním vašich osobních údajů máte následující práva:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 text-slate-700">
+                            <li><strong>Právo na přístup</strong> – máte právo získat potvrzení o tom, zda jsou vaše osobní údaje zpracovávány, a pokud ano, máte právo získat přístup k těmto údajům</li>
+                            <li><strong>Právo na opravu</strong> – máte právo požádat o opravu nepřesných osobních údajů</li>
+                            <li><strong>Právo na odstranění</strong> – máte právo požádat o vymazání svých osobních údajů, pokud již nejsou potřebné pro účely, pro které byly shromážděny</li>
+                            <li><strong>Právo na omezení zpracování</strong> – máte právo požádat o omezení zpracování vašich údajů</li>
+                            <li><strong>Právo na přenositelnost údajů</strong> – máte právo obdržet své osobní údaje ve strukturovaném, běžně používaném a strojově čitelném formátu</li>
+                            <li><strong>Právo vznést námitku</strong> – máte právo vznést námitku proti zpracování vašich osobních údajů na základě oprávněného zájmu</li>
+                        </ul>
+                        <p class="text-slate-700 leading-relaxed mt-4">
+                            Pro uplatnění svých práv nás kontaktujte na e-mailu <a href="mailto:{{ site.email }}" class="text-lime-600 hover:underline">{{ site.email }}</a>.
+                        </p>
+                    </section>
+
+                    <!-- 10. Dozorový úřad -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">10. Právo podat stížnost</h2>
+                        <p class="text-slate-700 leading-relaxed">
+                            Pokud se domníváte, že zpracováním vašich osobních údajů dochází k porušení GDPR, máte právo podat stížnost u dozorového úřadu:
+                        </p>
+                        <ul class="list-none space-y-1 text-slate-700 mt-4">
+                            <li><strong>Úřad pro ochranu osobních údajů (ÚOOÚ)</strong></li>
+                            <li>Pplk. Sochora 27, 170 00 Praha 7</li>
+                            <li>Web: <a href="https://www.uoou.cz" class="text-lime-600 hover:underline" target="_blank" rel="noopener noreferrer">www.uoou.cz</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- 11. Účinnost -->
+                    <section>
+                        <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">11. Účinnost</h2>
+                        <p class="text-slate-700 leading-relaxed">
+                            Tyto zásady ochrany osobních údajů jsou účinné od <strong>8. 2. 2026</strong> a mohou být průběžně aktualizovány.
+                        </p>
+                    </section>
+
+                </div>
+            </div>
+
+            <!-- Back -->
+            <div class="mt-12 flex items-center justify-start">
+                <a href="{{ basePath }}/index.html" class="text-lime-600 font-bold hover:underline flex items-center gap-2">
+                    {{ chevronLeft("w-4 h-4") }}
+                    Zpět na úvodní stránku
+                </a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+{% include "partials/footer.njk" %}
+{% endblock %}
