@@ -1,0 +1,19 @@
+{% extends "layouts/blog.njk" %}
+
+{% block featuredImage %}
+<div class="mb-12 rounded-3xl bg-white p-6 md:p-10 border border-slate-200">
+    <img src="{{ basePath }}/publicita-desktop.svg" alt="Spolufinancováno Evropskou unií" class="w-full max-w-md h-auto mx-auto">
+</div>
+{% endblock %}
+
+{% block articleContent %}
+<p class="text-lg text-slate-700 leading-relaxed">
+    Projekt je zaměřen na návrh a experimentální ověření konceptu inteligentního
+    on-line systému pro řízení toku účetních a daňových dokumentů s využitím
+    prvků umělé inteligence (AI).
+</p>
+<p class="text-slate-700">
+    Více projektů podpořených Evropskou unií na
+    <a href="https://www.mapaprojektu.cz" class="text-lime-700 font-medium underline hover:text-lime-800">www.mapaprojektu.cz</a>.
+</p>
+{% endblock %}

@@ -68,6 +68,16 @@ const pricing = [
 // Blog posts data
 const blogPosts = [
     {
+        url: 'blog/ai-asistent-dotace.html',
+        gradient: 'from-slate-100 to-white',
+        icon: '<img src="./publicita-desktop.svg" alt="Spolufinancováno Evropskou unií" class="w-full max-w-sm h-auto px-6">',
+        badgeClass: 'bg-slate-100 text-slate-700',
+        category: 'Projekt',
+        date: '10. října 2026',
+        title: 'AI asistent pro řízení toku účetních a daňových dokumentů',
+        excerpt: 'Návrh a experimentální ověření konceptu inteligentního on-line systému s využitím prvků umělé inteligence. Projekt je spolufinancován Evropskou unií.',
+    },
+    {
         url: 'blog/tipy-pro-zacinajici-podnikatele.html',
         gradient: 'from-fuchsia-200 to-fuchsia-300',
         icon: '<svg class="w-16 h-16 text-fuchsia-600 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>',
@@ -91,6 +101,25 @@ const blogPosts = [
 
 // Page definitions
 const pages = [
+    {
+        template: 'pages/blog/ai-asistent-dotace.njk',
+        output: 'blog/ai-asistent-dotace.html',
+        data: {
+            title: 'AI asistent pro účetní a daňové dokumenty | CB Účto s.r.o.',
+            description: 'Návrh, vývoj a experimentální ověření softwaru – AI asistenta pro řízení toku účetních a daňových dokumentů. Projekt je spolufinancován Evropskou unií.',
+            bodyClass: 'font-sans text-slate-800 bg-gradient-to-b from-fuchsia-100 via-pink-50 to-fuchsia-50 min-h-screen',
+            isHome: false,
+            basePath: '..',
+            canonicalPath: '/blog/ai-asistent-dotace.html',
+            breadcrumb: 'AI asistent – podpora projektu',
+            category: 'Projekt',
+            categoryBadgeClass: 'bg-slate-100 text-slate-700',
+            date: '10. října 2026',
+            dateISO: '2026-10-10',
+            articleTitle: 'Návrh, vývoj a experimentální ověření softwaru - AI asistenta pro řízení toku účetních a daňových dokumentů',
+            articleSubtitle: 'Projekt je spolufinancován Evropskou unií.',
+        },
+    },
     {
         template: 'pages/index.njk',
         output: 'index.html',

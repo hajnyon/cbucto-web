@@ -315,7 +315,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {% for post in blogPosts %}
+{% for post in blogPosts %}
                 <a href="{{ post.url }}" class="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-white/50 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-lime-500 focus:ring-offset-2 transition-all duration-300">
                     <div class="h-48 bg-gradient-to-br {{ post.gradient }} flex items-center justify-center">
                         {{ post.icon | safe }}
@@ -333,7 +333,7 @@
                         </div>
                     </div>
                 </a>
-                {% endfor %}
+{% endfor %}
             </div>
         </div>
     </section>

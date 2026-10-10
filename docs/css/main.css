@@ -761,6 +761,9 @@ video {
 .h-\[800px\] {
   height: 800px;
 }
+.h-auto {
+  height: auto;
+}
 .w-10 {
   width: 2.5rem;
 }
@@ -1047,6 +1050,10 @@ video {
 .border-slate-100 {
   --tw-border-opacity: 1;
   border-color: rgb(241 245 249 / var(--tw-border-opacity, 1));
+}
+.border-slate-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240 / var(--tw-border-opacity, 1));
 }
 .border-slate-50 {
   --tw-border-opacity: 1;
@@ -1495,6 +1502,9 @@ video {
 .text-white\/20 {
   color: rgb(255 255 255 / 0.2);
 }
+.underline {
+  text-decoration-line: underline;
+}
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -1656,6 +1666,10 @@ nav:has(#menu-toggle:checked) #mobile-menu {
 .hover\:text-lime-600:hover {
   --tw-text-opacity: 1;
   color: rgb(101 163 13 / var(--tw-text-opacity, 1));
+}
+.hover\:text-lime-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(63 98 18 / var(--tw-text-opacity, 1));
 }
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
@@ -1837,6 +1851,10 @@ nav:has(#menu-toggle:checked) #mobile-menu {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:p-10 {
+    padding: 2.5rem;
   }
 
   .md\:p-12 {

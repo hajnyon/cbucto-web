@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI asistent pro účetní a daňové dokumenty | CB Účto s.r.o.</title>
+    <meta name="description" content="Návrh, vývoj a experimentální ověření softwaru – AI asistenta pro řízení toku účetních a daňových dokumentů. Projekt je spolufinancován Evropskou unií.">
+    <link rel="canonical" href="https://www.cbucto.cz/blog/ai-asistent-dotace.html">
+    <meta property="og:title" content="AI asistent pro účetní a daňové dokumenty | CB Účto s.r.o.">
+    <meta property="og:description" content="Návrh, vývoj a experimentální ověření softwaru – AI asistenta pro řízení toku účetních a daňových dokumentů. Projekt je spolufinancován Evropskou unií.">
+    <meta property="og:url" content="https://www.cbucto.cz/blog/ai-asistent-dotace.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.cbucto.cz/logo.png">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="CB Účto s.r.o.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="ČB Účto">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../css/main.css">
+    
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Návrh, vývoj a experimentální ověření softwaru - AI asistenta pro řízení toku účetních a daňových dokumentů",
+    "description": "Projekt je spolufinancován Evropskou unií.",
+    "datePublished": "2026-10-10",
+    "author": {
+        "@type": "Person",
+        "name": "Monika Novotná"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "CB Účto s.r.o.",
+        "url": "https://www.cbucto.cz"
+    }
+}
+</script>
+
+</head>
+<body class="font-sans text-slate-800 bg-gradient-to-b from-fuchsia-100 via-pink-50 to-fuchsia-50 min-h-screen">
+    
+
+
+
+
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-lime-500 focus:text-white focus:rounded-lg focus:font-bold">
+    Přeskočit na obsah
+</a>
+
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-md py-2" aria-label="Hlavní navigace">
+    <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+
+        <!-- LOGO -->
+        <a href="../index.html" class="flex items-center gap-2 transform hover:scale-105 transition-transform duration-300 origin-left">
+            <img src="../logo.png" alt="CB Účto s.r.o." class="h-12 md:h-16 w-auto object-contain" id="logo-img" onerror="this.classList.add('hidden');document.getElementById('logo-fallback')?.classList.remove('hidden');document.getElementById('logo-fallback')?.classList.add('flex')">
+            
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8 font-medium text-slate-200 bg-slate-900/95 px-6 py-2.5 rounded-full backdrop-blur-sm border border-slate-700 shadow-xl hover:bg-slate-800 transition-all">
+            <a href="../index.html#sluzby" class="hover:text-lime-400 transition-colors">Služby</a>
+            <a href="../index.html#cenik" class="hover:text-lime-400 transition-colors">Ceník</a>
+            <a href="../index.html#blog" class="hover:text-lime-400 transition-colors text-lime-400" aria-current="page">Blog</a>
+            <a href="../index.html#kontakt" class="hover:text-lime-400 transition-colors">Kontakt</a>
+        </div>
+
+        <!-- Contact & Mobile Toggle -->
+        <div class="flex items-center gap-4">
+            <a href="tel:+420774803161" class="hidden lg:flex items-center gap-2 font-bold text-slate-700 hover:text-lime-600 transition-colors">
+                <svg class="w-[18px] h-[18px] text-lime-500 fill-lime-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                774 803 161
+            </a>
+            
+        </div>
+    </div>
+
+    
+</nav>
+
+
+<main id="main-content">
+<article class="pt-32 pb-20">
+    <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-8 text-sm">
+            <ol class="flex items-center flex-wrap">
+                <li><a href="../index.html" class="text-slate-500 hover:text-lime-600">Domů</a></li>
+                <li aria-hidden="true" class="mx-2 text-slate-400">/</li>
+                <li><a href="../index.html#blog" class="text-slate-500 hover:text-lime-600">Blog</a></li>
+                <li aria-hidden="true" class="mx-2 text-slate-400">/</li>
+                <li aria-current="page" class="text-slate-700">AI asistent – podpora projektu</li>
+            </ol>
+        </nav>
+
+        <!-- Article Header -->
+        <header class="mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Projekt</span>
+                <time datetime="2026-10-10" class="text-slate-500 text-sm">10. října 2026</time>
+            </div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight mb-6 break-words">
+                Návrh, vývoj a experimentální ověření softwaru - AI asistenta pro řízení toku účetních a daňových dokumentů
+            </h1>
+            <p class="text-xl text-slate-600 leading-relaxed">
+                Projekt je spolufinancován Evropskou unií.
+            </p>
+        </header>
+
+        
+<div class="mb-12 rounded-3xl bg-white p-6 md:p-10 border border-slate-200">
+    <img src="../publicita-desktop.svg" alt="Spolufinancováno Evropskou unií" class="w-full max-w-md h-auto mx-auto">
+</div>
+
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none">
+            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-lg border border-white/50 space-y-8">
+                
+<p class="text-lg text-slate-700 leading-relaxed">
+    Projekt je zaměřen na návrh a experimentální ověření konceptu inteligentního
+    on-line systému pro řízení toku účetních a daňových dokumentů s využitím
+    prvků umělé inteligence (AI).
+</p>
+<p class="text-slate-700">
+    Více projektů podpořených Evropskou unií na
+    <a href="https://www.mapaprojektu.cz" class="text-lime-700 font-medium underline hover:text-lime-800">www.mapaprojektu.cz</a>.
+</p>
+
+            </div>
+        </div>
+
+        <!-- Author & Back -->
+        <div class="mt-12 flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-white/60 rounded-2xl border border-white/80">
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 bg-lime-200 rounded-full flex items-center justify-center" aria-hidden="true">
+                    <span class="text-lg font-bold text-lime-700">MN</span>
+                </div>
+                <div>
+                    <p class="font-bold text-slate-900">Monika Novotná</p>
+                    <p class="text-sm text-slate-500">Jednatelka CB Účto s.r.o.</p>
+                </div>
+            </div>
+            <a href="../index.html#blog" class="text-lime-600 font-bold hover:underline flex items-center gap-2">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                Zpět na blog
+            </a>
+        </div>
+
+    </div>
+</article>
+</main>
+
+
+<footer class="bg-slate-950 text-slate-500 py-12 border-t border-slate-800">
+    <div class="container mx-auto px-4 text-center">
+        <span class="text-2xl font-bold text-white tracking-tighter mb-4 block">CB<span class="text-lime-500">Účto</span></span>
+        <p class="text-sm mb-4">Profesionální účetní služby v Českých Budějovicích</p>
+        <p class="text-xs">&copy; 2026 CB Účto s.r.o. Všechna práva vyhrazena.</p>
+    </div>
+</footer>
+
+
+
+    <!-- 100% privacy-first analytics -->
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+</body>
+</html>
